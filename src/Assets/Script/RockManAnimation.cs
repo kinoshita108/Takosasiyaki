@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class RockManAnimation : MonoBehaviour
 {
     // どのアニメーションを使うかを入れる
     public string upAnime = "";
@@ -26,8 +26,6 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         // 初めは前を剥いた状態からスタート
-        modeNow = downAnime;
-
         modeNow = standAnime_r;
     }
 
@@ -42,7 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKey("up"))
         {
             modeNow = upAnime;
-            vy = speed*2;
+            vy = speed * 2;
         }
         else if (Input.GetKey("down"))
         {
@@ -59,7 +57,7 @@ public class NewBehaviourScript : MonoBehaviour
             modeNow = rightAnime;
             vx = speed;
         }
-        else if(Input.GetKeyUp("right"))
+        else if (Input.GetKeyUp("right"))
         {
             modeNow = standAnime_r;
         }
@@ -67,10 +65,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             modeNow = standAnime_l;
         }
-        /*else
-        {
-                modeNow = standAnime_r;
-        }*/
     }
     void FixedUpdate()
     {
